@@ -3,6 +3,8 @@
 > A demo application using the [cqrs-es](https://github.com/serverlesstechnology/cqrs) framework
 > with a backing SQLite repository.
 
+[![Build status](https://github.com/johnbcodes/cqrs-es-demo-sqlite/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/johnbcodes/cqrs-es-demo-sqlite/actions/workflows/ci.yml)
+
 Now using the [Axum server](https://crates.io/crates/axum-server) for a much simpler layout.
 
 ## Requirements

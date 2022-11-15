@@ -1,5 +1,6 @@
 #![forbid(unsafe_code)]
 #![deny(clippy::all)]
+// #![warn(clippy::pedantic)]
 
 use std::sync::Arc;
 
