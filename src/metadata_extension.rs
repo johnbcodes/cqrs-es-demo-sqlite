@@ -15,8 +15,12 @@ impl<B: Send> FromRequest<B> for MetadataExtension {
     async fn from_request(req: &mut RequestParts<B>) -> Result<Self, Self::Rejection> {
         // Here we are including the current date/time, the uri that was called and the user-agent
         // in a HashMap that we will submit as metadata with the command.
+        let odt = time::OffsetDateTime::now_utc();
+        let time = odt
+            .format(&time::format_description::well_known::Rfc3339)
+            .unwrap();
         let mut metadata = HashMap::default();
-        metadata.insert("time".to_string(), chrono::Utc::now().to_rfc3339());
+        metadata.insert("time".to_string(), time);
         metadata.insert("uri".to_string(), req.uri().to_string());
         if let Some(user_agent) = req.headers().get(USER_AGENT_HDR) {
             if let Ok(value) = user_agent.to_str() {
