@@ -5,8 +5,6 @@
 
 [![Build status](https://github.com/johnbcodes/cqrs-es-demo-sqlite/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/johnbcodes/cqrs-es-demo-sqlite/actions/workflows/ci.yml)
 
-Now using the [Axum server](https://crates.io/crates/axum-server) for a much simpler layout.
-
 ## Requirements
 - rust 1.53 or greater
 - [curl](curl/test_api.sh) (or your favorite Restful client) 
@@ -29,3 +27,4 @@ For feedback on state you should call a query.
 ### Docs you might want
 
 - Documentation of cqrs-es crates as well as an introduction to CQRS [can be found here](https://doc.rust-cqrs.org/).
+- Documentation of the sqlite-es crate [can be found here](https://docs.rs/sqlite-es/latest/sqlite_es/).
