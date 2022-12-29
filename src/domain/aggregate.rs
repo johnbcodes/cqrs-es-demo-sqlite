@@ -142,7 +142,7 @@ mod aggregate_tests {
             balance: 200.0,
         };
         let command = BankAccountCommand::DepositMoney { amount: 200.0 };
-        let services = BankAccountServices::new(Box::new(MockBankAccountServices::default()));
+        let services = BankAccountServices::new(Box::<MockBankAccountServices>::default());
         // Obtain a new test framework
         AccountTestFramework::with(services)
             // In a test case with no previous events
@@ -164,7 +164,7 @@ mod aggregate_tests {
             balance: 400.0,
         };
         let command = BankAccountCommand::DepositMoney { amount: 200.0 };
-        let services = BankAccountServices::new(Box::new(MockBankAccountServices::default()));
+        let services = BankAccountServices::new(Box::<MockBankAccountServices>::default());
 
         AccountTestFramework::with(services)
             // Given this previously applied event
@@ -225,7 +225,7 @@ mod aggregate_tests {
             atm_id: "ATM34f1ba3c".to_string(),
         };
 
-        let services = BankAccountServices::new(Box::new(MockBankAccountServices::default()));
+        let services = BankAccountServices::new(Box::<MockBankAccountServices>::default());
         AccountTestFramework::with(services)
             .given_no_previous_events()
             .when(command)
@@ -285,7 +285,7 @@ mod aggregate_tests {
             amount: 100.0,
         };
 
-        let services = BankAccountServices::new(Box::new(MockBankAccountServices::default()));
+        let services = BankAccountServices::new(Box::<MockBankAccountServices>::default());
         AccountTestFramework::with(services)
             .given_no_previous_events()
             .when(command)
