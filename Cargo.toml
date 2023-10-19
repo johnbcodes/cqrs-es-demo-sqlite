@@ -1,6 +1,6 @@
 [package]
 name = "cqrs-es-demo-sqlite"
-version = "0.4.9"
+version = "0.4.10"
 authors = ["John Bledsoe",
            "Dave Garred <dave.garred@serverlesstechnology.com>"]
 edition = "2021"
@@ -14,10 +14,10 @@ publish = false
 [dependencies]
 async-trait = "0.1"
 axum = "0.6"
-cqrs-es = "0.4.9"
+cqrs-es = "0.4"
 serde = { version = "1.0", features = ["derive"]}
 serde_json = "1.0"
-sqlite-es = "0.4.9"
+sqlite-es = "0.4"
 sqlx = { version = "0.7", features = [ "json", "runtime-tokio-rustls", "sqlite" ] }
 time = { version = "0.3", features = [ "formatting" ] }
 tokio = { version = "1", features = ["full"] }
