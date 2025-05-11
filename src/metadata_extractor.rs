@@ -1,4 +1,3 @@
-use async_trait::async_trait;
 use axum::extract::FromRequestParts;
 use axum::http::request::Parts;
 use std::collections::HashMap;
@@ -9,7 +8,6 @@ pub struct MetadataExtractor(pub HashMap<String, String>);
 
 const USER_AGENT_HDR: &str = "User-Agent";
 
-#[async_trait]
 impl<S> FromRequestParts<S> for MetadataExtractor
 where
     S: Send + Sync,
